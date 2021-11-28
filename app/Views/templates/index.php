@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Sistem E-Arsip DLH Kota Madiun">
     <meta name="author" content="Pengembang DLH Kota Madiun">
-    <link rel="icon" href="<?= base_url() ?>/images/logo_dlh.png">
+    <link rel="icon" href="<?= base_url('/image/logo_dlh.png') ?>">
 
     <title>Sistem E-Arsip Dinas Lingkungan Hidup Kota Madiun | <?= $title ?></title>
 

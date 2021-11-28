@@ -16,7 +16,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item">
-  <a class="nav-link" href="<?= base_url('arsip') ?>">
+  <a class="nav-link" href="<?= base_url('archive') ?>">
     <i class="fas fa-copy"></i>
     <span class="color-white">Arsip</span>
   </a>
