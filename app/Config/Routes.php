@@ -34,6 +34,14 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/archive', 'Home::index');
 
+$routes->get('/archive/add', 'Archive::add');
+$routes->post('/archive/create', 'Archive::create');
+$routes->get('/archive/edit/(:num)', 'Archive::edit/$1');
+$routes->post('/archive/update/(:num)', 'Archive::update/$1');
+$routes->get('/archive/delete/(:num)', 'Archive::delete/$1');
+$routes->get('/archive/detail/(:num)', 'Archive::detail/$1');
+$routes->get('/archive/download/(:num)', 'Archive::download/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

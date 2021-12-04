@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ArchiveModel extends Model {
 
-  protected $table = 'exam';
+  protected $table = 'archive';
   protected $primaryKey = 'id';
   protected $useAutoIncrement = true;
   protected $useTimestamps = true;
