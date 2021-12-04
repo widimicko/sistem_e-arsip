@@ -4,7 +4,7 @@
 <!-- Sidebar - Brand -->
 <a class="mt-4 sidebar-brand d-flex align-items-center justify-content-center" href="/">
   <img src="<?= base_url('/image/logo_dlh.png') ?>"  class="img-fluid" alt="Logo" width="75px" height="75px">
-  <div class="mt-4 sidebar-brand-text mx-auto">Sistem E-Arsip</div>
+  <div class="mt-4 sidebar-brand-text mx-auto">Aplikasi Pengarsipan</div>
 </a>
 
 <!-- Divider -->
