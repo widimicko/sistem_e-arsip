@@ -22,6 +22,13 @@
   </a>
 </li>
 
+<li class="nav-item">
+  <a class="nav-link" href="<?= base_url('category') ?>">
+    <i class="fas fa-bookmark"></i>
+    <span class="color-white">Kategori</span>
+  </a>
+</li>
+
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

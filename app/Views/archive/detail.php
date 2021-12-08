@@ -18,11 +18,11 @@
       <?php $lastUpdate = date_create($archive['updated_at']); ?>
       <p><span>Terakhir diubah: <?= date_format($lastUpdate, 'l\, jS F Y \a\t g:ia') ?></span></p>
     </div>
-    <div class="card-body">
+    <div class="card-body" style="padding: 50px;">
       <a href="<?= base_url('archive/download/'.$archive['id']) ?>">Klik untuk mengunduh dokumen</a><br>
       <?php $extension = pathinfo($archive['document'], PATHINFO_EXTENSION); ?>
       <?php if ($extension == 'png' || $extension == 'jpg' || $extension == 'jpeg' || $extension == 'webp') : ?>
-        <img src="<?= base_url('document/'. $archive['document']) ?>" class="img-fluid" alt="<?= $archive['document'] ?>" style="border: 2px solid black;">
+        <img src="<?= base_url('document/'. $archive['document']) ?>" class="img-fluid" alt="<?= $archive['document'] ?>" style="height: 100%; border: 2px solid black;">
       <?php elseif ($extension == 'doc' || $extension == 'docx' || $extension == 'xls' || $extension == 'xlsx' || $extension == 'ppt' || $extension == 'pptx') : ?>
         <p>Format file Microsoft Office tidak didukung untuk ditampilkan, Silahkan convert kedalam format pdf atau unduh dokumen pada link diatas</p>
       <?php elseif ($extension == 'pdf') : ?>

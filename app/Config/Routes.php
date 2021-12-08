@@ -33,7 +33,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/archive', 'Home::index');
+$routes->get('/category', 'Home::category');
 
+// =============== Archives ===================
 $routes->get('/archive/add', 'Archive::add');
 $routes->post('/archive/create', 'Archive::create');
 $routes->get('/archive/edit/(:num)', 'Archive::edit/$1');
@@ -42,6 +44,10 @@ $routes->get('/archive/delete/(:num)', 'Archive::delete/$1');
 $routes->get('/archive/detail/(:num)', 'Archive::detail/$1');
 $routes->get('/archive/download/(:num)', 'Archive::download/$1');
 
+// =============== Categorys ===================
+$routes->post('/category/create', 'Category::create');
+$routes->post('/category/update/(:num)', 'Category::update/$1');
+$routes->get('/category/delete/(:num)', 'Category::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

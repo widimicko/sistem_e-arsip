@@ -3,16 +3,22 @@
 namespace App\Controllers;
 
 use App\Models\ArchiveModel;
+use App\Models\CategoryModel;
 
 class Archive extends BaseController {
     protected $archiveModel;
+    protected $categoryModel;
 
     public function __construct() {
         $this->archiveModel = new ArchiveModel();
+        $this->categoryModel = new CategoryModel();
     }
 
     public function add() {
-      $data['title'] = 'Tambah Arsip';
+      $data =[
+        'title' => 'Tambah Arsip',
+        'categories' => $this->categoryModel->findAll()
+      ];
 
       return view('archive/add', $data);
     }
@@ -32,7 +38,7 @@ class Archive extends BaseController {
   
       $this->archiveModel->insert([
         'title' => $this->request->getVar('title'),
-        'category' => $this->request->getVar('category'),
+        'id_category' => $this->request->getVar('category'),
         'document' => $uploadedFile->getName(),
       ]);
   
@@ -44,7 +50,7 @@ class Archive extends BaseController {
   
       $data = [
         'title' => 'Detail Arsip',
-        'archive' => $this->archiveModel->find($id)
+        'archive' => $this->archiveModel->select('archive.id as id, title, created_at, updated_at, document, category.name as category')->join('category', 'category.id = archive.id_category')->find($id)
       ];
   
       return view('archive/detail', $data);
@@ -54,7 +60,8 @@ class Archive extends BaseController {
   
       $data = [
         'title' => 'Ubah Data',
-        'archive' => $this->archiveModel->find($id)
+        'archive' => $this->archiveModel->find($id),
+        'categories' => $this->categoryModel->findAll()
       ];
   
       return view('archive/edit', $data);
@@ -91,7 +98,7 @@ class Archive extends BaseController {
   
       $this->archiveModel->update($id, [
         'title' => $this->request->getVar('title'),
-        'category' => $this->request->getVar('category'),
+        'id_category' => $this->request->getVar('category'),
         'document' => $isFileUploaded ? $uploadedFile->getName() : $archive['document'],
       ]);
   

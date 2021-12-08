@@ -12,7 +12,6 @@ class ArchiveModel extends Model {
   protected $useTimestamps = true;
   protected $createdField  = 'created_at';
   protected $updatedField  = 'updated_at';
-  protected $allowedFields = ['id', 'title', 'document', 'category', 'created_at', 'updated_at'];
-
+  protected $allowedFields = ['id', 'title', 'document', 'id_category', 'created_at', 'updated_at'];
 
 }

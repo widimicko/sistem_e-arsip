@@ -33,7 +33,14 @@
           </div>
           <div class="form-group">
             <label>Kategori</label>
-            <input type="text" name="category" class="form-control form-control-user <?= session('errors.category') ? 'is-invalid' : '' ?>" value="<?= $archive['category'] ?>" required>
+            <select name="category" class="form-control">
+              <?php foreach ($categories as $category) : ?>
+                <?php if ($archive['id_category'] == $category['id']) : ?>
+                  <option value="<?= $category['id'] ?>" selected><?= $category['name'] ?></option>
+                <?php continue; endif; ?>
+                <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+              <?php endforeach; ?>
+            </select>
             <div class="invalid-feedback">
               <?= session('errors.category') ?>
             </div>
